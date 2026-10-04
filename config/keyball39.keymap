@@ -18,12 +18,14 @@
 
 &lt {
     flavor = "balanced";
-    quick-tap-ms = <150>;
+    quick-tap-ms = <130>;
+    tapping-term-ms = <150>;
 };
 
 &mt {
     flavor = "tap-preferred";
-    quick-tap-ms = <150>;
+    quick-tap-ms = <140>;
+    tapping-term-ms = <150>;
 };
 
 / {
@@ -100,7 +102,7 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&trans      &trans     &trans     &trans     &trans                 &trans         &trans     &trans     &trans     &trans
+&trans      &trans     &mkp MB4   &mkp MB5   &trans                 &trans         &trans     &trans     &trans     &trans
 &trans      &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                 &kp PAGE_UP    &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MCLK
 &kp ESCAPE  &trans     &trans     &trans     &trans                 &kp PAGE_DOWN  &trans     &trans     &trans     &trans
 &trans      &trans     &trans     &trans     &mo 6   &mo 5  &trans  &mo 6                                           &trans
