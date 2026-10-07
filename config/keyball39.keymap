@@ -56,16 +56,27 @@
         };
     };
 
+    behaviors {
+        layer_mkp: layer_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Momentary Layer/Mouse Key Press";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             label = "Char";
             bindings = <
-&kp Q    &kp W        &kp E           &kp R        &kp T                                 &kp Y            &kp U        &kp I            &kp O        &kp P
-&kp Q    &mt LCTRL S  &mt LEFT_ALT D  &mt LSHFT F  &mt LEFT_GUI G                        &mt RIGHT_GUI H  &mt LSHFT J  &mt RIGHT_ALT K  &mt RCTRL L  &kp P
-&lt 4 A  &kp X        &kp C           &kp V        &kp B                                 &kp N            &kp M        &kp COMMA        &kp DOT      &lt 8 SEMICOLON
-&lt 4 Z  &mkp RCLK    &mkp MB1        &lt 3 ESC    &lt 1 SPACE     &kp SPACE  &lt 3 TAB  &lt 2 RET                                                   &kp SLASH
+&kp Q    &kp W              &kp E           &kp R        &kp T                                 &kp Y            &kp U        &kp I            &kp O        &kp P
+&kp Q    &mt LCTRL S        &mt LEFT_ALT D  &mt LSHFT F  &mt LEFT_GUI G                        &mt RIGHT_GUI H  &mt LSHFT J  &mt RIGHT_ALT K  &mt RCTRL L  &kp P
+&kp A    &kp X              &kp C           &kp V        &kp B                                 &kp N            &kp M        &kp COMMA        &kp DOT      &lt 8 SEMICOLON
+&lt 4 Z  &layer_mkp 4 RCLK  &mkp MB1        &lt 3 ESC    &lt 1 SPACE     &kp SPACE  &lt 3 TAB  &lt 2 RET                                                   &kp SLASH
             >;
         };
 
@@ -82,10 +93,10 @@
         symbol_layer {
             label = "Sym";
             bindings = <
-&kp EXCL         &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                  &kp CARET       &kp AMPS   &kp KP_MULTIPLY   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp EXCLAMATION  &kp S   &trans    &trans      &kp SQT                      &kp MINUS       &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp RIGHT_PARENTHESIS
-&kp A            &trans  &trans    &trans      &kp TILDE                    &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp BACKSLASH
-&trans           &trans  &trans    &trans      &trans       &trans  &trans  &trans                                                             &kp PIPE
+&kp EXCL         &kp AT  &kp HASH  &kp DOLLAR            &kp PERCENT                  &kp CARET       &kp AMPS              &kp KP_MULTIPLY            &kp LEFT_PARENTHESIS            &kp RIGHT_PARENTHESIS
+&kp EXCLAMATION  &kp S   &trans    &mt LEFT_SHIFT GRAVE  &kp SQT                      &kp MINUS       &mt LEFT_SHIFT EQUAL  &mt LEFT_ALT LEFT_BRACKET  &mt LEFT_CONTROL RIGHT_BRACKET  &kp RIGHT_PARENTHESIS
+&kp A            &trans  &trans    &trans                &kp TILDE                    &kp UNDERSCORE  &kp PLUS              &kp LEFT_BRACE             &kp RIGHT_BRACE                 &kp BACKSLASH
+&trans           &trans  &trans    &trans                &trans       &trans  &trans  &trans                                                                                           &kp PIPE
             >;
         };
 
@@ -142,9 +153,9 @@
 
         navigation_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &kp PAGE_UP    &kp PAGE_UP     &kp UP_ARROW  &trans     &trans
-&trans  &trans  &trans  &trans  &trans                  &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans         &trans          &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &trans         &kp PAGE_UP     &kp UP_ARROW  &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans                  &kp PAGE_DOWN  &trans          &trans        &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans
             >;
 
