@@ -15,6 +15,10 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/mouse_mover.dtsi>
 
+&mouse_mover_listner{
+	status = "okay";
+};
+
 &nice_view_spi { cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>; };
 
 &lt {
