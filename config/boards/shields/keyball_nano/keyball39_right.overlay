@@ -5,6 +5,12 @@
  */
  
 #include "keyball39.dtsi"
+#include <behavior/mouse_mover.dtsi>
+
+&mouse_mover_listner{
+	status = "okay";
+};
+
 
 &default_transform {
     col-offset = <6>;
