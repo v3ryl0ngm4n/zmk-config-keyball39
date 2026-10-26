@@ -16,6 +16,6 @@ manifest:
       revision: main
     - name: zmk-mouse-mover
       remote: denisekart
-      revision: v0.3
+      revision: main
   self:
     path: config
