@@ -6,9 +6,7 @@
  
 #include "keyball39.dtsi"
 
-&mouse_mover_listner{
-	status = "okay";
-};
+
 
 
 &default_transform {
